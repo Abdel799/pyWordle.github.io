@@ -8,7 +8,7 @@ def color_text(text, color_code):               # Function for colouring text
 
 def project():                                  # importing function that contains game (used for replaying)
     
-    f = open("cps109_a1_output.txt","w")               # Opens a new file, this file will be used to write the output
+    #f = open("cps109_a1_output.txt","w")               # Opens a new file, this file will be used to write the output
     
     print("Welcome to Wordle!")
     
@@ -26,7 +26,7 @@ def project():                                  # importing function that contai
     while difficulty > 3 or difficulty < 1:     # while loop to keep running while the user enters a number outside of the range 1 - 3 (inclusive)
         difficulty = int(input("\nEnter a level of difficult (1,2,3) 1. Amateur Hour, 2. Normal, 3. Shakespeare: "))
         
-        f.write("\nEnter a level of difficult (1,2,3) 1. Amateur Hour, 2. Normal, 3. Shakespeare: ")        # writes output to txt file
+       # f.write("\nEnter a level of difficult (1,2,3) 1. Amateur Hour, 2. Normal, 3. Shakespeare: ")        # writes output to txt file
         
     
     if difficulty == 1:
@@ -48,7 +48,7 @@ def project():                                  # importing function that contai
         while len(string1) != 5:                            # loop keeps looping until the user enters a five letter word
             string1 = input("\nEnter a 5 letter word: ")
             
-            f.write("\nEnter a 5 letter word: ")            # writes output to txt file
+            #f.write("\nEnter a 5 letter word: ")            # writes output to txt file
         
         string1 = string1.lower()                           # converts input string into all lower case
         string = string1
@@ -98,7 +98,7 @@ def project():                                  # importing function that contai
         if string1 == string2:                                          # if input string is the same as unknown string, you win
             print("\nCongratulations, YOU'VE WON!")
             
-            f.write("\nCongratulations, YOU'VE WON!")                   # writes output to txt file
+           # f.write("\nCongratulations, YOU'VE WON!")                   # writes output to txt file
             
             cond = True                                                 # condition turns to true (will be used later)
             break                                                       # breaks the loop, ends the game
@@ -106,24 +106,24 @@ def project():                                  # importing function that contai
     if cond == False:                                                   # if user fails to guess the word, the following prompt will be printed
         print("\nYou have failed to guess the word! The unknown word was",string2)
         
-        f.write("\nYou have failed to guess the word! The unknown word was " + string2)     # writes output to txt file
+       # f.write("\nYou have failed to guess the word! The unknown word was " + string2)     # writes output to txt file
     
     play = 0
     
     while play < 1 or play > 2:     # keeps running loop until user picks 1 or 2
         play = int(input("\nWould you like to play again (1 for yes) (2 for no): "))        # would you like to play again?
         
-        f.write("\nWould you like to play again (1 for yes) (2 for no): ")                  # writes output to txt file
+       # f.write("\nWould you like to play again (1 for yes) (2 for no): ")                  # writes output to txt file
     
     if play == 1:       # if user wants to play again
         project()       # recursion to reload the function again, allowing the user to replay
     
     else:               
         print("\nGoodbye")
-        f.write("\nGoodbye")            # the user doesn't want to play anymore :(
+       # f.write("\nGoodbye")            # the user doesn't want to play anymore :(
         
     
-    f.close()                           # closes the output text file
+ #   f.close()                           # closes the output text file
     
 
 project()                               # calls the function to start the program
